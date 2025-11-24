@@ -41,7 +41,10 @@ pipeline {
             steps {
                 script {
                     echo "Validating Docker Compose configuration..."
-                    sh '/usr/bin/docker compose config'
+                            sh '''
+                            export PATH=/usr/bin:$PATH
+                            docker compose -f /var/jenkins_home/workspace/u6605767-jenkins-docker/docker-compose.yml config
+                            '''
                 }
             }
         }
