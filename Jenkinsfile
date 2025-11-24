@@ -41,10 +41,7 @@ pipeline {
             steps {
                 script {
                     echo "Validating Docker Compose configuration..."
-                    sh '''
-                    export PATH=$PATH:/usr/bin
-                    docker compose config
-                    '''
+                    sh '/usr/bin/docker compose config'
                 }
             }
         }
